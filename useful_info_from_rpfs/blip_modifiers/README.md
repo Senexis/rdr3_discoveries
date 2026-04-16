@@ -36,12 +36,13 @@ Hashname | Actions
 --- | ---
 BLIP_MODIFIER_ANIMAL_SKINNED | **Alpha**:&nbsp;0.65<br>**Range**:&nbsp;Zoom Level
 BLIP_MODIFIER_AREA | **Alpha**:&nbsp;0.55 (for area layer)<br>**Category**:&nbsp;`OBJECTIVE_AREA`<br>**Conditional&nbsp;Style**:&nbsp;When entity inside blip area for 100ms:<br>- Apply `AUTO_MODIFIER_AREA_DIM_WHEN_INSIDE`<br>**Inverted&nbsp;State**:&nbsp;No
-BLIP_MODIFIER_AREA_ACCURATE | **Area&nbsp;Style**:&nbsp;`AREA_ACCURATE`
+BLIP_MODIFIER_AREA_ACCURATE | **Alpha**:&nbsp;0.55 (for area layer)<br>**Area&nbsp;Style**:&nbsp;`AREA_ACCURATE`
 BLIP_MODIFIER_AREA_CLAMPED_PULSE | **Alpha&nbsp;Pulse**:&nbsp;Pulse 100 times<br>- Duration: 4,000ms, Alpha: 0.5-1, Transition: Smooth
 BLIP_MODIFIER_AREA_CONTESTED | **Alpha&nbsp;Pulse**:&nbsp;Pulse 100 times<br>- Duration: 0ms, Transition: Smooth
-BLIP_MODIFIER_AREA_DIRECTIONAL | **Directional&nbsp;Edge&nbsp;Pointer**:&nbsp;Yes<br>**Sprite**:&nbsp;`BLIP_AREA_EDGE_DIRECTIONAL`
+BLIP_MODIFIER_AREA_DIRECTIONAL | **Alpha**:&nbsp;0.55 (for area layer)<br>**Conditional&nbsp;Style**:&nbsp;When entity inside blip area for 100ms:<br>- Apply `AUTO_MODIFIER_AREA_DIM_WHEN_INSIDE`<br>**Directional&nbsp;Edge&nbsp;Pointer**:&nbsp;Yes<br>**Sprite**:&nbsp;`BLIP_RADAR_EDGE_ARROW`<br>**Visibility**:&nbsp;Hidden on `Legend`
 BLIP_MODIFIER_AREA_HIDE_ON_INSIDE | **Alpha**:&nbsp;0.55 (for area layer)<br>**Category**:&nbsp;`OBJECTIVE_AREA`<br>**Conditional&nbsp;Visibility**:&nbsp;Toggle visibility when **NOT** entity inside blip area<br>**Inverted&nbsp;State**:&nbsp;No
 BLIP_MODIFIER_AREA_HIDE_ON_OUTSIDE | **Alpha**:&nbsp;0.55 (for area layer)<br>**Category**:&nbsp;`OBJECTIVE_AREA`<br>**Conditional&nbsp;Visibility**:&nbsp;Toggle visibility when entity inside blip area<br>**Inverted&nbsp;State**:&nbsp;No
+BLIP_MODIFIER_AREA_NO_BLIP | **Alpha**:&nbsp;0.55 (for area layer)<br>**Conditional&nbsp;Style**:&nbsp;When entity inside blip area for 100ms:<br>- Apply `AUTO_MODIFIER_AREA_DIM_WHEN_INSIDE`<br>**Directional&nbsp;Edge&nbsp;Pointer**:&nbsp;Yes<br>**Sprite**:&nbsp;`BLIP_NULL`<br>**Visibility**:&nbsp;Hidden on `Legend`
 BLIP_MODIFIER_AREA_OUT_OF_BOUNDS | **Color**:&nbsp;`COLOR_RED`
 BLIP_MODIFIER_AREA_PULSE | **Alpha&nbsp;Pulse**:&nbsp;Pulse 100 times<br>- Duration: 4,000ms, Transition: Smooth
 BLIP_MODIFIER_AREA_TAKEOVER | **Alpha&nbsp;Pulse**:&nbsp;Pulse 100 times<br>- Duration: 1,000ms, Transition: Smooth
@@ -96,6 +97,7 @@ BLIP_MODIFIER_ENEMY_MUST_AGGRO | **Color**:&nbsp;`COLOR_FRIENDLY`<br>**Condition
 BLIP_MODIFIER_ENEMY_OBJECTIVE | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_ENEMY`<br>**Heading&nbsp;Type**:&nbsp;Off<br>**Height&nbsp;Indicator**:&nbsp;Yes<br>**Range**:&nbsp;Always<br>**Scale&nbsp;Pulse**:&nbsp;Pulse 4 times<br>**Sprite**:&nbsp;`BLIP_OBJECTIVE`
 BLIP_MODIFIER_ENEMY_ON_GUARD | **Color**:&nbsp;`COLOR_ENEMY_UNALERTED`<br>**Conditional&nbsp;Style**:&nbsp;When becoming hostile:<br>- Apply `AUTO_ENEMY_ANGRY`<br>**Heading&nbsp;Type**:&nbsp;Cone (with color `COLOR_WHITE`)
 BLIP_MODIFIER_ENEMY_ON_GUARD_DISAPPEARING | **Color**:&nbsp;`COLOR_ENEMY_UNALERTED`<br>**Conditional&nbsp;Style**:&nbsp;When becoming hostile:<br>- Apply `AUTO_ENEMY_ANGRY`<br>**Conditional&nbsp;Visibility**:&nbsp;Fade when enemy behavior<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms<br>**Heading&nbsp;Type**:&nbsp;Cone (with color `COLOR_WHITE`)
+BLIP_MODIFIER_ENEMY_ON_GUARD_NO_CONE | **Color**:&nbsp;`COLOR_ENEMY_UNALERTED`<br>**Conditional&nbsp;Style**:&nbsp;When becoming hostile:<br>- Apply `AUTO_ENEMY_ANGRY`
 BLIP_MODIFIER_ENEMY_STEALTH_KILL | **Color**:&nbsp;`COLOR_ENEMY_UNALERTED`<br>**Heading&nbsp;Type**:&nbsp;Cone (with color `COLOR_WHITE`)
 BLIP_MODIFIER_ENEMY_TARGETED_ONLY | **Color**:&nbsp;`COLOR_ENEMY`<br>**Conditional&nbsp;Visibility**:&nbsp;Fade when being targeted<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms
 BLIP_MODIFIER_FADE | **Fade&nbsp;Effect&nbsp;2**:&nbsp;Triggers when style/modifier is removed:<br>- Fade-in: 1,000ms, Fade-out: 1,000ms
@@ -103,9 +105,13 @@ BLIP_MODIFIER_FADE_IN | **Fade&nbsp;Effect&nbsp;1**:&nbsp;Fade-in effect:<br>- D
 BLIP_MODIFIER_FADE_OUT_AND_DIE | **Conditional&nbsp;Removal**:&nbsp;Remove blip (fades over 1,500ms)
 BLIP_MODIFIER_FADE_OUT_SLOW | **Fade&nbsp;Effect&nbsp;2**:&nbsp;Triggers when style/modifier is removed:<br>- Fade-in: 150ms, Fade-out: 5,000ms
 BLIP_MODIFIER_FETCH_ESCAPING | **Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 150m, Rate: 0.04, Minimum alpha: 0.5
+BLIP_MODIFIER_FETCH_VIP | **Sprite**:&nbsp;`BLIP_AMBIENT_VIP`
 BLIP_MODIFIER_FISHING_SPOT_LEGENDARY | **Range**:&nbsp;Map: Always, Radar: 50m
 BLIP_MODIFIER_FISHING_SPOT_NORMAL | **Range**:&nbsp;50m
 BLIP_MODIFIER_FLASH_FOREVER | **Flash&nbsp;Effect**:&nbsp;Flash forever
+BLIP_MODIFIER_FLASH_LONG | **Flash&nbsp;Effect**:&nbsp;Flash 10 times
+BLIP_MODIFIER_FLASH_MEDIUM | **Flash&nbsp;Effect**:&nbsp;Flash 5 times
+BLIP_MODIFIER_FLASH_SHORT | **Flash&nbsp;Effect**:&nbsp;Flash 3 times
 BLIP_MODIFIER_FOR_SALE | **Color**:&nbsp;`COLOR_RADAR_WRONG_TOD`<br>**Overlay**:&nbsp;`BLIP_FOR_SALE` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_FORCE_GPS | **GPS&nbsp;Path**:&nbsp;Enabled<br>- Auto-hide distance: 15m
 BLIP_MODIFIER_FORCE_GPS_HORSE_ONLY | **Conditional&nbsp;Style**:&nbsp;When player is on horseback for 50ms:<br>- Apply `BLIP_MODIFIER_FORCE_GPS`
@@ -129,6 +135,8 @@ BLIP_MODIFIER_GROUPING_SAINT_DENIS_FOLLOWER | **Grouping**:&nbsp;Follower of `SA
 BLIP_MODIFIER_GROUPING_SAINT_DENIS_LEADER | **Grouping**:&nbsp;Leader of `SAINT_DENIS` group
 BLIP_MODIFIER_GROUPING_STRAWBERRY_FOLLOWER | **Grouping**:&nbsp;Follower of `STRAWBERRY` group
 BLIP_MODIFIER_GROUPING_STRAWBERRY_LEADER | **Grouping**:&nbsp;Leader of `STRAWBERRY` group
+BLIP_MODIFIER_GROUPING_THIEVES_LANDING_FOLLOWER | **Grouping**:&nbsp;Follower of `THIEVES_LANDING` group
+BLIP_MODIFIER_GROUPING_THIEVES_LANDING_LEADER | **Grouping**:&nbsp;Leader of `THIEVES_LANDING` group
 BLIP_MODIFIER_GROUPING_TUMBLEWEED_FOLLOWER | **Grouping**:&nbsp;Follower of `TUMBLEWEED` group
 BLIP_MODIFIER_GROUPING_TUMBLEWEED_LEADER | **Grouping**:&nbsp;Leader of `TUMBLEWEED` group
 BLIP_MODIFIER_GROUPING_VALENTINE_FOLLOWER | **Grouping**:&nbsp;Follower of `VALENTINE` group
@@ -147,6 +155,13 @@ BLIP_MODIFIER_HORSE_REVIVE_2 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Dur
 BLIP_MODIFIER_HORSE_REVIVE_3 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Duration: 1,000ms, Transition: Smooth<br>**Overlay**:&nbsp;`BLIP_OVERLAY_HORSE_REVIVE` (with color `COLOR_RED`)
 BLIP_MODIFIER_HORSE_REVIVE_4 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Duration: 500ms, Transition: Smooth<br>**Overlay**:&nbsp;`BLIP_OVERLAY_HORSE_REVIVE` (with color `COLOR_RED`)
 BLIP_MODIFIER_HORSE_STOLEN | **Color**:&nbsp;`COLOR_ENEMY`
+BLIP_MODIFIER_HOSTILITY_COLOR_1 | **Color**:&nbsp;`COLOR_NOTORIETY_LOW`
+BLIP_MODIFIER_HOSTILITY_COLOR_2 | **Color**:&nbsp;`COLOR_NOTORIETY_MEDIUM`
+BLIP_MODIFIER_HOSTILITY_COLOR_3 | **Color**:&nbsp;`COLOR_NOTORIETY_HIGH`
+BLIP_MODIFIER_HOSTILITY_VISIBILITY_1 | **Category**:&nbsp;`OTHER_PLAYER`<br>**Conditional&nbsp;Visibility**:&nbsp;Fade when free roam player<br>- Fade-in: 150ms, Stay: 10,000ms, Fade-out: 1,000ms<br>**Range**:&nbsp;300m
+BLIP_MODIFIER_HOSTILITY_VISIBILITY_2 | **Category**:&nbsp;`NOTORIETY_PLAYER_MEDIUM`<br>**Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 280m, Rate: 0.05, Minimum alpha: 0.001<br>**Range**:&nbsp;300m
+BLIP_MODIFIER_HOSTILITY_VISIBILITY_3 | **Category**:&nbsp;`NOTORIETY_PLAYER_HIGH`<br>**Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 480m, Rate: 0.05, Minimum alpha: 0.001<br>**Range**:&nbsp;500m
+BLIP_MODIFIER_HOSTILITY_VISIBILITY_4 | **Category**:&nbsp;`NOTORIETY_PLAYER_HIGH`<br>**Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 480m, Rate: 0.05, Minimum alpha: 0.001<br>**Range**:&nbsp;Map: Always, Radar: 500m
 BLIP_MODIFIER_JOB | **Overlay**:&nbsp;`BLIP_JOB` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_JOB_BILL | **Overlay**:&nbsp;`BLIP_OVERLAY_BILL` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_JOB_CHARLES | **Overlay**:&nbsp;`BLIP_OVERLAY_CHARLES` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
@@ -169,6 +184,8 @@ BLIP_MODIFIER_KEY_MISSION_OBJECT | **Color**:&nbsp;`COLOR_OBJECTIVE`<br>**Invert
 BLIP_MODIFIER_LAW_ORDER | **Conditional&nbsp;Style**:&nbsp;When law location unknown:<br>- Apply `AUTO_MODIFIER_COP_SEARCH_CONE`<br>**Conditional&nbsp;Styles**:&nbsp;When known criminal identified:<br>  - Apply `AUTO_MODIFIER_COP_CRIMINAL_KNOWN`<br>  - Remove `AUTO_MODIFIER_COP_CRIMINAL_UNKNOWN`<br>Otherwise:<br>  - Apply `AUTO_MODIFIER_COP_CRIMINAL_UNKNOWN`<br>  - Remove `AUTO_MODIFIER_COP_CRIMINAL_KNOWN`<br>**Range**:&nbsp;Map: 300m, Radar: Zoom Level<br>**Threat&nbsp;Indicator**:&nbsp;Up to 200m
 BLIP_MODIFIER_LEGENDARY | **Color**:&nbsp;`COLOR_YELLOWLIGHT`<br>**Range**:&nbsp;Map: Always, Radar: 150m
 BLIP_MODIFIER_LOCAL_PLAYER_FOLLOWING_OBJECTIVE | **Color**:&nbsp;`COLOR_OBJECTIVE`
+BLIP_MODIFIER_LOCAL_PLAYER_HOSTILITY_HIGH | **Flash&nbsp;Effect**:&nbsp;Flash 3 times<br>**Overlay**:&nbsp;`BLIP_CODE_CENTER_GLOW` (with color `COLOR_NOTORIETY_HIGH`)
+BLIP_MODIFIER_LOCAL_PLAYER_HOSTILITY_MEDIUM | **Flash&nbsp;Effect**:&nbsp;Flash 3 times<br>**Overlay**:&nbsp;`BLIP_CODE_CENTER_GLOW_ALPHA` (with color `COLOR_NOTORIETY_HIGH`)
 BLIP_MODIFIER_LOCAL_PLAYER_MADE_VISIBLE | **Flash&nbsp;Effect**:&nbsp;Flash forever
 BLIP_MODIFIER_LOCAL_PLAYER_OWNED | **Color**:&nbsp;`COLOR_LOCAL_PLAYER`
 BLIP_MODIFIER_LOCKED | **Alpha**:&nbsp;0.1 (for area layer)<br>**Color**:&nbsp;`COLOR_LOW_PRIORITY`<br>**Overlay**:&nbsp;`BLIP_LOCKED` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
@@ -212,30 +229,70 @@ BLIP_MODIFIER_MP_COLOR_29 | **Color**:&nbsp;`COLOR_NET_PLAYER29`
 BLIP_MODIFIER_MP_COLOR_30 | **Color**:&nbsp;`COLOR_NET_PLAYER30`
 BLIP_MODIFIER_MP_COLOR_31 | **Color**:&nbsp;`COLOR_NET_PLAYER31`
 BLIP_MODIFIER_MP_COLOR_32 | **Color**:&nbsp;`COLOR_NET_PLAYER32`
+BLIP_MODIFIER_MP_DEADEYE | **Sprite**:&nbsp;`BLIP_MP_DEADEYE`
 BLIP_MODIFIER_MP_DOWNED | **Category**:&nbsp;`MISSION_ACTIVE`<br>**Range**:&nbsp;Zoom Level<br>**Scale**:&nbsp;1.2<br>**Sprite**:&nbsp;`BLIP_AMBIENT_PED_DOWNED`
 BLIP_MODIFIER_MP_ENEMY_HOLDING | **Color**:&nbsp;`COLOR_ENEMY`
+BLIP_MODIFIER_MP_FREE_ROAM_EE_PLAYER_DISAPPEARING | **Conditional&nbsp;Visibility**:&nbsp;Fade when free roam player (EE)<br>- Fade-in: 150ms, Stay: 5,000ms, Fade-out: 1,500ms
+BLIP_MODIFIER_MP_FREE_ROAM_MISSION_PLAYER_DISAPPEARING | **Conditional&nbsp;Visibility**:&nbsp;Fade when free roam player (mission)<br>- Fade-in: 150ms, Stay: 5,000ms, Fade-out: 2,000ms
+BLIP_MODIFIER_MP_FREE_ROAM_PLAYER_DISAPPEARING | **Conditional&nbsp;Visibility**:&nbsp;Fade when free roam player<br>- Fade-in: 150ms, Stay: 5,000ms, Fade-out: 1,000ms
 BLIP_MODIFIER_MP_FRIENDLY_HOLDING | **Color**:&nbsp;`COLOR_NET_PLAYER1`
 BLIP_MODIFIER_MP_HOT_BLIP | **Color**:&nbsp;`COLOR_ORANGE`<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_MP_HUNTER | **Sprite**:&nbsp;`BLIP_AMBIENT_HUNTER`
 BLIP_MODIFIER_MP_JOB_PLAYER_FADE | **Conditional&nbsp;Visibility**:&nbsp;Fade when enemy in deathmatch<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms
+BLIP_MODIFIER_MP_JOB_PLAYER_FADE_THREAT | **Conditional&nbsp;Visibility**:&nbsp;Fade when enemy in deathmatch<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms<br>**Range**:&nbsp;Map: Always, Radar: Zoom Level<br>**Threat&nbsp;Indicator**:&nbsp;Up to 200m
+BLIP_MODIFIER_MP_MARKED_FOR_DEATH | **Color**:&nbsp;`COLOR_ENEMY`<br>**Sprite**:&nbsp;`BLIP_AMBIENT_MARKED_FOR_DEATH`
 BLIP_MODIFIER_MP_NEUTRAL | **Color**:&nbsp;`COLOR_MP_OBJECTIVE_NEUTRAL`
 BLIP_MODIFIER_MP_OBJECTIVE | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_MP_OBJECTIVE`<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_MP_OBJECTIVE_ENEMY | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_MP_OBJECTIVE_ENEMY`<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_MP_OBJECTIVE_FRIENDLY | **Category**:&nbsp;`VIP`<br>**Color**:&nbsp;`COLOR_MP_OBJECTIVE_FRIENDLY`<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_MP_OBJECTIVE_NEUTRAL | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_MP_OBJECTIVE_NEUTRAL`<br>**Range**:&nbsp;Always
+BLIP_MODIFIER_MP_OVERLAY_ANIMAL | **Overlay**:&nbsp;`BLIP_OVERLAY_ANIMAL` (with color `COLOR_YELLOWLIGHT`)
+BLIP_MODIFIER_MP_OVERLAY_SEDATED | **Overlay**:&nbsp;`BLIP_OVERLAY_SEDATIVE` (with color `COLOR_WHITE`)
+BLIP_MODIFIER_MP_PLAYER | _No actions_
+BLIP_MODIFIER_MP_PLAYER_AGGRESSION | **Category**:&nbsp;`AGGRESSIVE_PLAYER`<br>**Color**:&nbsp;`COLOR_POSSE_ENEMY`
 BLIP_MODIFIER_MP_PLAYER_ALLY | **Color**:&nbsp;`COLOR_NET_PLAYER1`
 BLIP_MODIFIER_MP_PLAYER_ALLY_WOUNDED | **Overlay**:&nbsp;`BLIP_OVERLAY_REVIVE` (with color `COLOR_WHITE`)
+BLIP_MODIFIER_MP_PLAYER_BAG | **Sprite**:&nbsp;`BLIP_CASH_BAG`
 BLIP_MODIFIER_MP_PLAYER_CONTROL | **Category**:&nbsp;`OBJECTIVE`<br>**Scale**:&nbsp;1.2<br>**Scale&nbsp;Pulse**:&nbsp;Pulse 4 times
 BLIP_MODIFIER_MP_PLAYER_COOP | **Color**:&nbsp;`COLOR_CO_OP_PLAYER`
-BLIP_MODIFIER_MP_PLAYER_DISAPPEARING | **Conditional&nbsp;Visibility**:&nbsp;Fade when enemy behavior<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms
+BLIP_MODIFIER_MP_PLAYER_DISAPPEARING | **Conditional&nbsp;Visibility**:&nbsp;Fade when AIBlips_MP<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms
 BLIP_MODIFIER_MP_PLAYER_ENEMY | **Color**:&nbsp;`COLOR_ENEMY`<br>**Range**:&nbsp;Zoom Level<br>**Threat&nbsp;Indicator**:&nbsp;Up to 200m
+BLIP_MODIFIER_MP_PLAYER_FORCE_BLIPPED | **Conditional&nbsp;Style**:&nbsp;When PlayerOutOfThreatRange for 100ms:<br>- Apply `AUTO_MODIFIER_MAP_ONLY`
+BLIP_MODIFIER_MP_PLAYER_KING | **Sprite**:&nbsp;`BLIP_AMBIENT_KING`
 BLIP_MODIFIER_MP_PLAYER_LOS_ONLY | **Conditional&nbsp;Visibility**:&nbsp;Fade when person in line of sight<br>- Fade-in: 150ms, Stay: 2,000ms, Fade-out: 1,500ms
 BLIP_MODIFIER_MP_PLAYER_NEUTRAL | **Color**:&nbsp;`COLOR_LOW_PRIORITY`
+BLIP_MODIFIER_MP_PLAYER_SOCIAL | **Range**:&nbsp;Map: Always
 BLIP_MODIFIER_MP_PLAYER_UNAVAILABLE | **Alpha**:&nbsp;0.5
 BLIP_MODIFIER_MP_PLAYER_WINNING | **Color**:&nbsp;`COLOR_WINNING_PLAYER`
 BLIP_MODIFIER_MP_PLAYER_WITH_BOUNTY | **Color**:&nbsp;`COLOR_ENEMY`<br>**Sprite**:&nbsp;`BLIP_AMBIENT_BOUNTY_TARGET`
 BLIP_MODIFIER_MP_REVIVE | **Overlay**:&nbsp;`BLIP_OVERLAY_REVIVE` (with color `COLOR_WHITE`)
 BLIP_MODIFIER_MP_RIVAL_RACER | **Color**:&nbsp;`COLOR_ENEMY`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_1 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_1`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_2 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_2`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_3 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_3`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_4 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_4`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_5 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_5`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_6 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_6`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_7 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_7`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_8 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_8`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_9 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_9`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_10 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_10`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_11 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_11`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_12 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_12`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_13 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_13`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_14 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_14`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_15 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_15`
+BLIP_MODIFIER_MP_SUPPLIES_BASE_16 | **Sprite**:&nbsp;`BLIP_MP_SUPPLIES_BASE_16`
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_1 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER1`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_2 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER2`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_3 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER3`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_4 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER4`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_5 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER5`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_6 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER6`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_7 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER7`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_8 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER8`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_9 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER9`)
+BLIP_MODIFIER_MP_SUPPLIES_OUTLINE_COLOR_10 | **Overlay**:&nbsp;`BLIP_MP_SUPPLIES_OUTLINE` (with color `COLOR_NET_PLAYER10`)
 BLIP_MODIFIER_MP_TEAM_COLOR_1 | **Color**:&nbsp;`COLOR_NET_PLAYER3`
 BLIP_MODIFIER_MP_TEAM_COLOR_2 | **Color**:&nbsp;`COLOR_NET_PLAYER4`
 BLIP_MODIFIER_MP_TEAM_COLOR_3 | **Color**:&nbsp;`COLOR_NET_PLAYER5`
@@ -245,9 +302,11 @@ BLIP_MODIFIER_MP_TEAM_COLOR_6 | **Color**:&nbsp;`COLOR_NET_PLAYER8`
 BLIP_MODIFIER_MP_TEAM_COLOR_7 | **Color**:&nbsp;`COLOR_NET_PLAYER9`
 BLIP_MODIFIER_MP_TEAM_COLOR_8 | **Color**:&nbsp;`COLOR_NET_PLAYER10`
 BLIP_MODIFIER_MP_WHITE_FLAG | **Overlay**:&nbsp;`BLIP_OVERLAY_FLAG` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_NEUTRAL_AREA_ON_SNOW | **Alpha**:&nbsp;0.8 (for area layer)<br>**Category**:&nbsp;`COMPANION`<br>**Color**:&nbsp;`COLOR_PURE_WHITE`<br>**Height&nbsp;Indicator**:&nbsp;Yes<br>**Label**:&nbsp;`BLIP_FRIEND`<br>**Scale**:&nbsp;1<br>**Sprite**:&nbsp;`BLIP_AMBIENT_PED_MEDIUM`
 BLIP_MODIFIER_NEUTRAL_ON_GUARD | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_OBJECTIVE`<br>**Heading&nbsp;Type**:&nbsp;Cone (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;1.1
-BLIP_MODIFIER_OBJECTIVE | **Category**:&nbsp;`MISSION_ACTIVE`<br>**Color**:&nbsp;`COLOR_OBJECTIVE`<br>**GPS&nbsp;Path**:&nbsp;Disabled<br>**Height&nbsp;Indicator**:&nbsp;Yes<br>**Range**:&nbsp;Always
+BLIP_MODIFIER_OBJECTIVE | **Category**:&nbsp;`OBJECTIVE`<br>**Color**:&nbsp;`COLOR_OBJECTIVE`<br>**GPS&nbsp;Path**:&nbsp;Disabled<br>**Height&nbsp;Indicator**:&nbsp;Yes<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_OBJECTIVE_GET_CLOSE | _No actions_
+BLIP_MODIFIER_OBJECTIVE_LOW_CATEGORY | **Category**:&nbsp;`OBJECTIVE_AREA`
 BLIP_MODIFIER_OPEN_RACE_CHECKPOINT | **Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 100m, Rate: 0.005, Minimum alpha: 0.5
 BLIP_MODIFIER_OUTSIDE_TOD | **Color**:&nbsp;`COLOR_RADAR_WRONG_TOD`<br>**Overlay**:&nbsp;`BLIP_TIME_OF_DAY` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_1 | **Overlay**:&nbsp;`BLIP_OVERLAY_1` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
@@ -255,6 +314,7 @@ BLIP_MODIFIER_OVERLAY_2 | **Overlay**:&nbsp;`BLIP_OVERLAY_2` (with color `COLOR_
 BLIP_MODIFIER_OVERLAY_3 | **Overlay**:&nbsp;`BLIP_OVERLAY_3` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_4 | **Overlay**:&nbsp;`BLIP_OVERLAY_4` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_5 | **Overlay**:&nbsp;`BLIP_OVERLAY_5` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_6 | **Overlay**:&nbsp;`BLIP_OVERLAY_6` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_RING_MP_COLOR_1 | **Overlay**:&nbsp;`BLIP_OVERLAY_RING` (with color `COLOR_NET_PLAYER1`)
 BLIP_MODIFIER_OVERLAY_RING_MP_COLOR_2 | **Overlay**:&nbsp;`BLIP_OVERLAY_RING` (with color `COLOR_NET_PLAYER2`)
 BLIP_MODIFIER_OVERLAY_RING_MP_COLOR_3 | **Overlay**:&nbsp;`BLIP_OVERLAY_RING` (with color `COLOR_NET_PLAYER3`)
@@ -272,8 +332,20 @@ BLIP_MODIFIER_OVERLAY_WHITE_2 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_2` (with c
 BLIP_MODIFIER_OVERLAY_WHITE_3 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_3` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_WHITE_4 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_4` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_OVERLAY_WHITE_5 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_5` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_6 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_6` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_7 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_7` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_8 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_8` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_9 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_9` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_10 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_10` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_11 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_11` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_12 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_12` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_13 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_13` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_14 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_14` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_15 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_15` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
+BLIP_MODIFIER_OVERLAY_WHITE_16 | **Overlay**:&nbsp;`BLIP_OVERLAY_WHITE_16` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_PARTY | **Overlay**:&nbsp;`BLIP_OVERLAY_PARTY` (with color `COLOR_WHITE`)<br>**Scale**:&nbsp;Default: 1, Edge: 0.9, Embedded: 0.9
 BLIP_MODIFIER_PICKUP_NEW | **Overlay**:&nbsp;`BLIP_AMBIENT_NEW` (with color `COLOR_WHITE`)
+BLIP_MODIFIER_PICKUP_PLACEMENT | **Conditional&nbsp;Style**:&nbsp;When pickup location has pickup for 100ms:<br>- Apply `BLIP_MODIFIER_HIDDEN`
 BLIP_MODIFIER_PICKUP_SURVIVAL_MODES | **Range**:&nbsp;50m
 BLIP_MODIFIER_PICKUP_UNAVAILABLE | **Alpha**:&nbsp;0.5
 BLIP_MODIFIER_PICKUP_WEAPON_LEGENDARY | **Category**:&nbsp;`PICKUPS`<br>**Color**:&nbsp;`COLOR_YELLOWLIGHT`
@@ -281,6 +353,7 @@ BLIP_MODIFIER_PICKUP_WEAPON_NEW | **Category**:&nbsp;`PICKUPS`<br>**Color**:&nbs
 BLIP_MODIFIER_PICKUP_WEAPON_OF_CHOICE | **Color**:&nbsp;`COLOR_OBJECTIVE`
 BLIP_MODIFIER_PICKUP_WEAPON_OWNED | **Category**:&nbsp;`PICKUPS`<br>**Color**:&nbsp;`COLOR_WHITE`
 BLIP_MODIFIER_PICKUP_WEAPON_RARE | **Category**:&nbsp;`PICKUPS`<br>**Color**:&nbsp;`COLOR_BLUE`
+BLIP_MODIFIER_PING_GUNSHOT | **Conditional&nbsp;Style**:&nbsp;When gunshots heard:<br>- Apply `AUTO_MODIFIER_PING_GUNSHOT`
 BLIP_MODIFIER_PLAYER_HORSE_HITCHED | **Sprite**:&nbsp;`BLIP_HORSE_OWNED_HITCHED`
 BLIP_MODIFIER_PLAYER_HORSE_IN_RANGE | **Color**:&nbsp;`COLOR_WHITE`
 BLIP_MODIFIER_PLAYER_HORSE_IN_RANGE_WHISTLE | **Scale&nbsp;Pulse**:&nbsp;Pulse 4 times
@@ -289,16 +362,24 @@ BLIP_MODIFIER_PLAYER_HORSE_OUT_OF_RANGE | **Color**:&nbsp;`COLOR_LOW_PRIORITY`
 BLIP_MODIFIER_PLAYER_HORSE_OUT_OF_RANGE_WHISTLE | **Flash&nbsp;Effect**:&nbsp;Flash 4 times
 BLIP_MODIFIER_POSSE_ALLY | **Alpha**:&nbsp;1<br>**Category**:&nbsp;`OTHER_PLAYER_FRIENDLY`<br>**Color**:&nbsp;`COLOR_POSSE_ALLY`<br>**Range**:&nbsp;Always
 BLIP_MODIFIER_POSSE_ALLY_OWNED | **Color**:&nbsp;`COLOR_POSSE_ALLY`
-BLIP_MODIFIER_POSSE_ENEMY | **Category**:&nbsp;`ENEMY`<br>**Color**:&nbsp;`COLOR_POSSE_ENEMY`<br>**Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 350m, Rate: 0.005, Minimum alpha: 0.001<br>**Range**:&nbsp;Zoom Level<br>**Threat&nbsp;Indicator**:&nbsp;Up to 200m
+BLIP_MODIFIER_POSSE_ENEMY | **Category**:&nbsp;`ENEMY`<br>**Color**:&nbsp;`COLOR_POSSE_ENEMY`<br>**Range**:&nbsp;Map: 300m, Radar: Zoom Level<br>**Threat&nbsp;Indicator**:&nbsp;Up to 300m
 BLIP_MODIFIER_POSSE_ENEMY_OWNED | **Color**:&nbsp;`COLOR_POSSE_ENEMY`
 BLIP_MODIFIER_POSSE_NEUTRAL | **Category**:&nbsp;`OTHER_PLAYER`<br>**Color**:&nbsp;`COLOR_POSSE_NEUTRAL`<br>**Distance&nbsp;Fade**:&nbsp;Fade only when on radar edge:<br>- Starts at 350m, Rate: 0.005, Minimum alpha: 0.001
 BLIP_MODIFIER_POSSE_NEUTRAL_OWNED | **Color**:&nbsp;`COLOR_POSSE_NEUTRAL`
+BLIP_MODIFIER_PREDATOR | **Conditional&nbsp;Visibility**:&nbsp;Fade when predator is damaged<br>- Fade-in: 150ms, Stay: 7,500ms, Fade-out: 1,500ms<br>**Sprite**:&nbsp;`BLIP_PREDATOR`
+BLIP_MODIFIER_PREDATOR_5 | **Conditional&nbsp;Visibility**:&nbsp;Fade when predator is damaged<br>- Fade-in: 150ms, Stay: 5,000ms, Fade-out: 1,500ms<br>**Sprite**:&nbsp;`BLIP_PREDATOR`
+BLIP_MODIFIER_PREDATOR_10 | **Conditional&nbsp;Visibility**:&nbsp;Fade when predator is damaged<br>- Fade-in: 150ms, Stay: 10,000ms, Fade-out: 1,500ms<br>**Sprite**:&nbsp;`BLIP_PREDATOR`
 BLIP_MODIFIER_PULSE_FOREVER | **Scale&nbsp;Pulse**:&nbsp;Pulse forever
+BLIP_MODIFIER_PULSE_THREE_TIMES | **Scale&nbsp;Pulse**:&nbsp;Pulse 3 times
+BLIP_MODIFIER_PVP_TARGET | **Conditional&nbsp;Styles**:&nbsp;When PvP target tracked:<br>  - Apply `BLIP_MODIFIER_PVP_TARGET_TRACKED`<br>  - Remove `BLIP_MODIFIER_PVP_TARGET`<br>**Conditional&nbsp;Visibility**:&nbsp;Fade when PvpTargetSeen<br>- Fade-in: 150ms, Stay: 20,000ms, Fade-out: 1,500ms
+BLIP_MODIFIER_PVP_TARGET_TRACKED | **Conditional&nbsp;Styles**:&nbsp;When PvP target tracked:<br>None<br>Otherwise:<br>  - Apply `BLIP_MODIFIER_PVP_TARGET`<br>  - Remove `BLIP_MODIFIER_PVP_TARGET_TRACKED`
 BLIP_MODIFIER_RACE_CHECKPOINT_ALT | **Color**:&nbsp;`COLOR_ORANGE`
 BLIP_MODIFIER_RADAR_EDGE_ALWAYS | **Range**:&nbsp;Always
 BLIP_MODIFIER_RADAR_EDGE_NEVER | **Range**:&nbsp;Zoom Level
+BLIP_MODIFIER_RADAR_EDGE_PAUSE_MAP_NEVER | **Range**:&nbsp;Zoom Level<br>**Visibility**:&nbsp;Hidden on `PauseMap`, `Legend`
 BLIP_MODIFIER_SCALE_1 | **Scale**:&nbsp;1.2
 BLIP_MODIFIER_SCALE_2 | **Scale**:&nbsp;1.5
+BLIP_MODIFIER_SELECTED_UP_SCALE | **Scale**:&nbsp;1.5
 BLIP_MODIFIER_SHOP_UNAVAILABLE | **Color**:&nbsp;`COLOR_RADAR_WRONG_TOD`
 BLIP_MODIFIER_SHOW_HEIGHT | **Height&nbsp;Indicator**:&nbsp;Yes
 BLIP_MODIFIER_SHRINK_WARNING_1 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Duration: 1,000ms, Transition: Abrupt
@@ -314,7 +395,8 @@ BLIP_MODIFIER_TRACKING | **Tracking**:&nbsp;Tracking enabled<br>- Interval: 1,50
 BLIP_MODIFIER_TRAIN_MISSION | **Range**:&nbsp;Always
 BLIP_MODIFIER_UNDISCOVERED | **Color**:&nbsp;`COLOR_RADAR_UNDISCOVERED`
 BLIP_MODIFIER_URGENT | **Scale&nbsp;Pulse**:&nbsp;Pulse forever
-BLIP_MODIFIER_URGENT_ALERT | **Range**:&nbsp;Always<br>**Scale&nbsp;Pulse**:&nbsp;Pulse 10 times
+BLIP_MODIFIER_URGENT_ALERT | **BM_TimedPopStyle**:&nbsp;Apply **BLIP_MODIFIER_URGENT_ALERT_INTERNAL** for **11,500ms**
+BLIP_MODIFIER_URGENT_ALERT_INTERNAL | **Category**:&nbsp;`OBJECTIVE`<br>**Range**:&nbsp;Always<br>**Scale&nbsp;Pulse**:&nbsp;Pulse 5 times
 BLIP_MODIFIER_VERYHIGH_CATEGORY | **Category**:&nbsp;`VIP`
 BLIP_MODIFIER_WANTED_PULSE_1 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Duration: 2,500ms, Alpha: 0.5-1, Transition: Abrupt
 BLIP_MODIFIER_WANTED_PULSE_2 | **Alpha&nbsp;Pulse**:&nbsp;Pulse forever<br>- Duration: 2,000ms, Alpha: 0.5-1, Transition: Abrupt
@@ -333,6 +415,7 @@ Hashname | Actions
 AUTO_ENEMY_ANGRY | **Color**:&nbsp;`COLOR_ENEMY`<br>**Heading&nbsp;Type**:&nbsp;Off
 AUTO_ENEMY_FLEEING | **Color**:&nbsp;`COLOR_WHITE`
 AUTO_MODIFIER_AREA_DIM_WHEN_INSIDE | **Alpha**:&nbsp;0.45 (for area layer)
+AUTO_MODIFIER_AREA_HIDE_WHEN_INSIDE | **Alpha**:&nbsp;0 (for area layer)
 AUTO_MODIFIER_CENTER_HIDDEN | **Color**:&nbsp;`COLOR_LOW_PRIORITY`
 AUTO_MODIFIER_CENTER_ON_HORSE | **Sprite**:&nbsp;`BLIP_CODE_CENTER_ON_HORSE`
 AUTO_MODIFIER_COP_CRIMINAL_KNOWN | **Color**:&nbsp;`COLOR_RADAR_POLICE_RED`
@@ -341,8 +424,11 @@ AUTO_MODIFIER_COP_INVESTIGATING | **Color**:&nbsp;`COLOR_WHITE`
 AUTO_MODIFIER_COP_POTENTIAL_SUSPECT | **Color**:&nbsp;`COLOR_RADAR_POLICE_LOOKING`
 AUTO_MODIFIER_COP_SEARCH_CONE | **Heading&nbsp;Type**:&nbsp;Cone (with color `COLOR_WHITE`)
 AUTO_MODIFIER_MAP_ONLY | **Visibility**:&nbsp;Hidden on `Radar`
+AUTO_MODIFIER_MOONSHINE_AREA_DIM_WHEN_INSIDE | **Alpha**:&nbsp;0.25 (for area layer)
 AUTO_MODIFIER_MP_PLAYER_ATTACKING | **Scale&nbsp;Pulse**:&nbsp;Pulse forever
 AUTO_MODIFIER_MP_PLAYER_ATTACKING_FTB | **Color**:&nbsp;`COLOR_ENEMY`<br>**Scale&nbsp;Pulse**:&nbsp;Pulse forever
+AUTO_MODIFIER_PING_GUNSHOT | **Range**:&nbsp;Always<br>**Sonar&nbsp;Pulse**:&nbsp;Pulse 1 time<br>- Radius: 70m, Duration: 1,200ms
+AUTO_MODIFIER_SAFE_AREA_DIM_WHEN_INSIDE | **Alpha**:&nbsp;0.3 (for area layer)<br>**Color**:&nbsp;`COLOR_WHITE`
 AUTO_MODIFIER_WANTED_FLASH | **Alpha**:&nbsp;0.9 (for area layer)<br>**Color**:&nbsp;`COLOR_WHITE` (for area layer)<br>**Sonar&nbsp;Pulse**:&nbsp;Pulse 1 time<br>- Radius: 100m, Duration: 800ms
 AUTO_MODIFIER_WITNESS_IDENTIFIED | **Color**:&nbsp;`COLOR_WITNESS_IDENTIFIED`
 AUTO_MODIFIER_WITNESS_INVESTIGATING | **Color**:&nbsp;`COLOR_WITNESS_INVESTIGATING`<br>**Scale&nbsp;Pulse**:&nbsp;Pulse 4 times
